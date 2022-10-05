@@ -94,13 +94,13 @@ Set SoldAsVacant =
 With RowNumCTE AS(
 Select *, 
 ROW_NUMBER()OVER(
-			PARTITION BY ParcelID,
-						 PropertyAddress,
-						 SaleDate,
-						 SalePrice,
-						 LegalReference
-						 Order By UniqueID
-						 )RowNum
+		PARTITION BY ParcelID,
+			     PropertyAddress,
+			     SaleDate,
+			     SalePrice,
+		             LegalReference
+		         Order By UniqueID
+		)RowNum
 from PortfolioProject..NashvilleHousing
 --Order By ParcelID
 )
@@ -112,13 +112,13 @@ Where RowNum > 1
 With RowNumCTE AS(
 Select *, 
 ROW_NUMBER()OVER(
-			PARTITION BY ParcelID,
-						 PropertyAddress,
-						 SaleDate,
-						 SalePrice,
-						 LegalReference
-						 Order By UniqueID
-						 )RowNum
+		 PARTITION BY ParcelID,
+		 PropertyAddress,
+		 SaleDate,
+		 SalePrice,
+		 LegalReference
+		 Order By UniqueID
+		 )RowNum
 from PortfolioProject..NashvilleHousing
 --Order By ParcelID
 )
